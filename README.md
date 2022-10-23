@@ -68,7 +68,7 @@ once: <P extends keyof T>(event: P,callback: (message: T[P]) => void) => void;
 #### `off`
 
 ```ts
-off: <P extends keyof T>(event: P,callback: (message: T[P_2]) => void) => void;
+off: <P extends keyof T>(event: P,callback: (message: T[P]) => void) => void;
 ```
 
 #### `ofAll`
