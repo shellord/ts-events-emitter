@@ -1,6 +1,6 @@
 {
   "name": "ts-events-emitter",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A typesafe event emitter for typescript.",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
