@@ -1,5 +1,5 @@
 {
-  "name": "ts-event-emitter",
+  "name": "ts-events-emitter",
   "version": "0.0.1",
   "description": "A typesafe event emitter for typescript.",
   "main": "dist/cjs/index.js",
