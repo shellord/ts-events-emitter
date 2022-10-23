@@ -22,11 +22,11 @@ type TEvent = {
 
 const emitter = eventsEmitter<TEvent>();
 
-emitter.on("event", (event) => {
+emitter.on("event-one", (event) => {
   console.log(event.a);
 });
 
-emitter.emit("event1", { foo: "bar" });
+emitter.emit("event-one", { a: 100 });
 ```
 
 ## Emitting events
