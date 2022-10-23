@@ -1,4 +1,4 @@
-import eventsEmitter from "../src/index";
+import { createEventEmitter } from "../src/index";
 
 type TEvents = {
   "user:created": {
@@ -10,7 +10,7 @@ type TEvents = {
     name: string;
   };
 };
-const event = eventsEmitter<TEvents>();
+const event = createEventEmitter<TEvents>();
 
 event.on("user:created", (message) => {
   console.log(message.name);

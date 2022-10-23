@@ -2,7 +2,7 @@ type StringKeyedObject = {
   [key: string]: unknown;
 };
 
-const eventEmitter = <T extends StringKeyedObject>() => {
+export const createEventEmitter = <T extends StringKeyedObject>() => {
   const listeners = new Map<keyof T, Array<(message: any) => void>>();
 
   const on = <P extends keyof T>(
@@ -58,5 +58,3 @@ const eventEmitter = <T extends StringKeyedObject>() => {
     offAll,
   };
 };
-
-export default eventEmitter;

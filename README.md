@@ -13,14 +13,14 @@ npm install ts-events-emitter
 ## Usage
 
 ```ts
-import eventsEmitter from "ts-events-emitter";
+import { createEventEmitter } from "ts-events-emitter";
 
 type TEvent = {
   "event-one": { a: number; b: string };
   "event-two": { c: number; d: string };
 };
 
-const emitter = eventsEmitter<TEvent>();
+const emitter = createEventEmitter<TEvent>();
 
 emitter.on("event-one", (event) => {
   console.log(event.a);
