@@ -1,9 +1,19 @@
 import eventsEmitter from "../src/index";
 
-const event = eventsEmitter<"add" | "delete">();
+type TEvents = {
+  "user:created": {
+    id: string;
+    name: string;
+  };
+  "user:updated": {
+    id: string;
+    name: string;
+  };
+};
+const event = eventsEmitter<TEvents>();
 
-event.on("add", (message: unknown) => {
-  console.log(message);
+event.on("user:created", (message) => {
+  console.log(message.name);
 });
 
-event.emit("add", "world");
+event.emit("user:updated", { id: "1", name: "John" });

@@ -11,19 +11,34 @@ npm install ts-events-emitter
 ## Usage
 
 ```ts
-import { EventEmitter } from "ts-events-emitter";
+import eventsEmitter from "ts-events-emitter";
 
-type MyEvent = {
-  foo: string;
+type TEvent = {
+  "event-one": { a: number; b: string };
+  "event-two": { c: number; d: string };
 };
 
-const emitter = new EventEmitter<MyEvent>();
+const emitter = eventsEmitter<TEvent>();
 
-emitter.on("foo", (event) => {
-  console.log(event.foo);
+emitter.on("event", (event) => {
+  console.log(event.a);
 });
 
-emitter.emit("foo", { foo: "bar" });
+emitter.emit("event1", { foo: "bar" });
+```
+
+## Emitting events
+
+```ts
+emitter.emit("event-one", { a: 1, b: "foo" });
+```
+
+## Listening to events
+
+```ts
+emitter.on("event-one", (event) => {
+  console.log(event.a);
+});
 ```
 
 ## API
@@ -33,29 +48,29 @@ emitter.emit("foo", { foo: "bar" });
 #### `emit`
 
 ```ts
- emit: (event: T, message: TMessage) => void;
+emit: <P extends keyof T>(event: P, message: T[P]) => void;
 ```
 
 #### `on`
 
 ```ts
-on: (event: T, callback: (message: TMessage) => void) => void;
+on: <P extends keyof T>(event: P, callback: (message: T[P]) => void) => void;
 ```
 
 #### `once`
 
 ```ts
-once: (event: T, callback: (message: TMessage) => void) => void;
+once: <P extends keyof T>(event: P,callback: (message: T[P]) => void) => void;
 ```
 
 #### `off`
 
 ```ts
-off: (event: T, callback: (message: TMessage) => void) => void;
+off: <P_2 extends keyof T>(event: P_2,callback: (message: T[P_2]) => void) => void;
 ```
 
-#### `removeAllListeners`
+#### `ofAll`
 
 ```ts
-removeAllListeners: (event: T) => void;
+ offAll: (event: keyof T) => void;
 ```
