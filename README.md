@@ -1,6 +1,6 @@
 # ts-events-emitter
 
-A typesafe event emitter for TypeScript.
+A lightweight typesafe event emitter with zero dependencies.
 
 [CodeSandbox Example](https://codesandbox.io/s/ts-events-emitter-g23pbn)
 
