@@ -2,6 +2,8 @@
 
 A typesafe event emitter for TypeScript.
 
+[CodeSandbox Example](https://codesandbox.io/s/ts-events-emitter-g23pbn)
+
 ## Installation
 
 ```bash
