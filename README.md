@@ -26,7 +26,7 @@ emitter.on("event-one", (event) => {
   console.log(event.a);
 });
 
-emitter.emit("event-one", { a: 100 });
+emitter.emit("event-one", { a: 100, b: "hello" });
 ```
 
 ## Emitting events
